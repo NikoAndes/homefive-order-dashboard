@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeFive Order Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">&#9724;</span>
+        <span class="brand-name">HomeFive</span>
+        <span class="brand-tag">Order Dashboard</span>
+      </div>
+      <div class="header-meta">
+        <span id="lastUpdated">Loading...</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Metrics Cards -->
+    <section class="metrics" id="metrics">
+      <div class="card metric-card" id="card-total">
+        <div class="metric-label">Total Orders</div>
+        <div class="metric-value" id="m-total">0</div>
+      </div>
+      <div class="card metric-card status-new" id="card-new">
+        <div class="metric-label">New</div>
+        <div class="metric-value" id="m-new">0</div>
+      </div>
+      <div class="card metric-card status-confirmed" id="card-confirmed">
+        <div class="metric-label">Confirmed</div>
+        <div class="metric-value" id="m-confirmed">0</div>
+      </div>
+      <div class="card metric-card status-in-process" id="card-in-process">
+        <div class="metric-label">In Process</div>
+        <div class="metric-value" id="m-in_process">0</div>
+      </div>
+      <div class="card metric-card status-dispatched" id="card-dispatched">
+        <div class="metric-label">Dispatched</div>
+        <div class="metric-value" id="m-dispatched">0</div>
+      </div>
+      <div class="card metric-card status-delivered" id="card-delivered">
+        <div class="metric-label">Delivered</div>
+        <div class="metric-value" id="m-delivered">0</div>
+      </div>
+      <div class="card metric-card status-returned" id="card-returned">
+        <div class="metric-label">Returned</div>
+        <div class="metric-value" id="m-returned">0</div>
+      </div>
+      <div class="card metric-card status-cancelled" id="card-cancelled">
+        <div class="metric-label">Cancelled</div>
+        <div class="metric-value" id="m-cancelled">0</div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="controls">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Search by customer, city or order ID..."
+      />
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-status="ALL">All</button>
+        <button class="filter-btn" data-status="NEW">New</button>
+        <button class="filter-btn" data-status="CONFIRMED">Confirmed</button>
+        <button class="filter-btn" data-status="IN_PROCESS">In Process</button>
+        <button class="filter-btn" data-status="DISPATCHED">Dispatched</button>
+        <button class="filter-btn" data-status="DELIVERED">Delivered</button>
+        <button class="filter-btn" data-status="RETURNED">Returned</button>
+        <button class="filter-btn" data-status="CANCELLED">Cancelled</button>
+      </div>
+    </section>
+
+    <!-- Orders Table -->
+    <section class="table-section">
+      <div class="table-header">
+        <h2 class="table-title">Orders</h2>
+        <span class="table-count" id="tableCount">0 orders</span>
+      </div>
+      <div class="table-wrapper">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Customer</th>
+              <th>City</th>
+              <th>Amount (COP)</th>
+              <th>Carrier</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>HomeFive Order Dashboard &mdash; Prototype with fictional data &mdash; Built by
+      <a href="https://github.com/NikoAndes" target="_blank">Nicolas Isaza Sierra</a>
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
